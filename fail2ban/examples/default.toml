@@ -1,0 +1,24 @@
+loglevel = "INFO"
+logtarget = "STDOUT"
+db_purge_age = "1d"
+
+[default]
+ignoreip = "127.0.0.1/8, ::1"
+ban_time = "10m"
+find_time = "10m"
+max_retry = 5
+backend = "auto"
+use_dns = "warn"
+log_encoding = "auto"
+enabled = false
+
+[actions]
+destination_email = "root@localhost"
+sender = "root@<fq-hostname>"
+mta = "sendmail"
+protocol = "tcp"
+chain = "<known/chain>"
+port = "0:65535"
+fail2ban_agent = "Fail2Ban/%(fail2ban_version)s"
+ban_action = "iptables-multiport"
+ban_action_all_ports = "iptables-allports"

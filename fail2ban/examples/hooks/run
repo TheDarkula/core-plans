@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Redirect stderr
+exec 2>&1
+
+
+exec fail2ban-server -c {{ pkg.svc_config_path }}
