@@ -742,6 +742,8 @@ plan_path = "linux-headers"
 plan_path = "linux-headers-musl"
 [linux-pam]
 plan_path = "linux-pam"
+[lld]
+plan_path = "lld"
 [llvm]
 plan_path = "llvm"
 [llvm5]
