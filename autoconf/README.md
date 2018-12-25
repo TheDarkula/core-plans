@@ -1,4 +1,6 @@
-# autoconf
+# autogen
+
+A tool designed to simplify the creation and maintenance of programs that contain large amounts of repetitious text
 
 ## Maintainers
 

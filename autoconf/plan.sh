@@ -1,41 +1,18 @@
-pkg_name=autoconf
+pkg_name=autogen
+pkg_version=5.18.16
 pkg_origin=core
-pkg_version=2.69
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
-pkg_description="\
-Autoconf is an extensible package of M4 macros that produce shell scripts to \
-automatically configure software source code packages.\
-"
-pkg_upstream_url="https://www.gnu.org/software/autoconf/autoconf.html"
-pkg_license=('GPL-2.0')
-pkg_source="http://ftp.gnu.org/gnu/${pkg_name}/${pkg_name}-${pkg_version}.tar.xz"
-pkg_shasum="64ebcec9f8ac5b2487125a86a7760d2591ac9e1d3dbd59489633f9de62a57684"
-pkg_deps=(
-  core/m4
-  core/perl
-)
-pkg_build_deps=(
-  core/diffutils
-  core/inetutils
-  core/gcc
-  core/make
-)
+pkg_license=('GPL-3.0')
+pkg_description="A tool designed to simplify the creation and maintenance of programs that contain large amounts of repetitious text"
+pkg_upstream_url=https://www.gnu.org/software/autogen/
+pkg_source="http://ftp.gnu.org/gnu/autogen/rel${pkg_version}/autogen-${pkg_version}.tar.gz"
+pkg_shasum=e23c5bbd0ac83079ae2ef6eb3fd1948fecce718ac853025607a3ab0395538406
+pkg_deps=(core/glibc core/gcc-libs core/guile core/libxml2 core/zlib)
+pkg_build_deps=(core/gcc core/make core/pkg-config core/diffutils core/which core/perl)
 pkg_bin_dirs=(bin)
+pkg_include_dirs=(include)
+pkg_lib_dirs=(lib)
 
-
-# ----------------------------------------------------------------------------
-# **NOTICE:** What follows are implementation details required for building a
-# first-pass, "stage1" toolchain and environment. It is only used when running
-# in a "stage1" Studio and can be safely ignored by almost everyone. Having
-# said that, it performs a vital bootstrapping process and cannot be removed or
-# significantly altered. Thank you!
-# ----------------------------------------------------------------------------
-if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(
-    core/gcc
-    core/coreutils
-    core/sed
-    core/gawk
-    core/diffutils
-  )
-fi
+do_check() {
+  make check
+}
