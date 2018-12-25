@@ -1,12 +1,12 @@
 pkg_name=at-spi2-core
 pkg_origin=core
-pkg_version="2.26.2"
+pkg_version="2.30.0"
 pkg_description="Service Provider Interface for the Assistive Technologies available on the GNOME platform"
 pkg_upstream_url="https://wiki.linuxfoundation.org/accessibility/atk/at-spi/at-spi_on_d-bus"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('LGPL-2.0')
 pkg_source="https://download.gnome.org/sources/${pkg_name}/${pkg_version%.*}/${pkg_name}-${pkg_version}.tar.xz"
-pkg_shasum=c80e0cdf5e3d713400315b63c7deffa561032a6c37289211d8afcfaa267c2615
+pkg_shasum=0175f5393d19da51f4c11462cba4ba6ef3fa042abf1611a70bdfed586b7bfb2b
 pkg_deps=(
   core/dbus
   core/glib
